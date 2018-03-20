@@ -9,7 +9,7 @@ const config = {
   user: 'test_html',
   password: '123456',
 }
-var fileArr = [] // all file array
+var fileArr = [] // All file contianers [array]
 var localPath
 var serverPath
 var positivePath
@@ -90,13 +90,12 @@ program // upload catalog
                   if (err) {
                     console.log(err)
                   } else {
-                    if (fileArr[index + 1]) { // exist next file
+                    if (fileArr[index + 1]) { // if exist next file
                       upload(fileArr[index + 1], fileArr, index + 1)
                       console.log(filename + ' has uploaded')
                     } else {
                       console.log('All is uploaded')
                     }
-                    // 进入下个要上传的文件
                   }
                 })
               }
@@ -134,7 +133,7 @@ function fileDisplay (filePath) {
         var filedir = path.join(filePath,filename)
         fs.stat(filedir, function(eror, stats){
           if(eror){
-            console.warn('获取文件stats失败')
+            console.warn('Fail to get file stats')
           } else {
             var isFile = stats.isFile()
             var isDir = stats.isDirectory()
@@ -142,7 +141,7 @@ function fileDisplay (filePath) {
               fileArr.push(filedir)
             }
             if (isDir) {
-              fileDisplay(filedir) // find the below file
+              fileDisplay(filedir) // Find the files below the Directory 
             }
           }
         })
