@@ -1,0 +1,16 @@
+{
+  "name": "ftp",
+  "version": "3.2.0",
+  "description": "ftp code uploader",
+  "main": "index.html",
+  "scripts": {
+    "build-app": "node cli.js build app",
+    "build-assets": "node cli.js build assets",
+    "build-libs": "node cli.js build libs"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "browser": "^0.2.6"
+  }
+}
